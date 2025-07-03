@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Iconic Byte - 3D & Motion Agency</title>
+<style>
+  /* Root color variables */
+  :root {
+    --black: #0a0a0a;
+    --DARK brown: #6f4e37;
+    --grey-dark: #444444;
+    --grey-light: #999999;
+    --dark-purple: #3b1a4d;
+    --accent: #9b59b6; /* purple accent */
+    --white: #f5f5f5;
+  }
+
+
+<style>
+  /* Color Palette */
+  :root {
+    --black: #0a0a0a;
+    --violet: #7f00ff;
+    --purple: #5a189a;
+    --DARK brown: #6f4e37;
+    --white: #f5f5f5;
+    --accent: #a66bbe;
+  }
+  }
+  .btn-primary:hover {
+    background-color: var(--violet);
+  }
+
+  /* 3D Animation Placeholder */
+  .hero-3d {
+    flex: 1 1 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  /* For demo: a spinning cube animation as 3D placeholder */
+  .cube {
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    animation: spin 12s linear infinite;
+    position: relative;
+  }
+  .face {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: var(--purple);
+    border: 3px solid var(--violet);
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    user-select: none;
+  }
+  .face1 { transform: rotateY(0deg) translateZ(125px); }
+  .face2 { transform: rotateY(90deg) translateZ(125px); }
+  .face3 { transform: rotateY(180deg) translateZ(125px); }
+  .face4 { transform: rotateY(-90deg) translateZ(125px); }
+  .face5 { transform: rotateX(90deg) translateZ(125px); }
+  .face6 { transform: rotateX(-90deg) translateZ(125px); }
+
+  @keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+  }
+</style>
+</head>
+<body>
+    <div class="hero-3d" aria-label="3D animated character placeholder">
+      <div class="cube" aria-hidden="true">
+        <div class="face face1">C</div>
+        <div class="face face2">I</div>
+        <div class="face face3">C</div>
+        <div class="face face4">O</div>
+        <div class="face face5">N</div>
+        <div class="face face6">I</div>
+      </div>
+    </div>
+  </section>
+
+  
+<style>
+  .cube {
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    animation: spin 12s linear infinite;
+    position: relative;
+
+
+
+
+  }
+  .face {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: var(--purple);
+    border: 3px solid var(--violet);
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    user-select: none;
+  }
+  .face1 { transform: rotateY(0deg) translateZ(125px); }
+  .face2 { transform: rotateY(90deg) translateZ(125px); }
+  .face3 { transform: rotateY(180deg) translateZ(125px); }
+  .face4 { transform: rotateY(-90deg) translateZ(125px); }
+  .face5 { transform: rotateX(90deg) translateZ(125px); }
+  .face6 { transform: rotateX(-90deg) translateZ(125px); }
+
+ 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: var(--black);
+    color: var(--grey-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: var(--black);
+    padding: 1.3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--purple);
+    box-shadow: 0 4px 12px rgba(107, 78, 55, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    user-select: none;
+    cursor: default;
+  }
+  nav a {
+    color: var(--purple);
+    font-weight: 700;
+    margin-left: 2rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: var(--accent);
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after,
+  nav a:focus::after {
+    width: 100%;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 4rem 5rem 4rem;
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-purple) 80%);
+  }
+  .hero-text {
+    max-width: 600px;
+    color: var(--white);
+  }
+  .hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+  }
+  .hero-text p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--grey-light);
+  }
+  .btn-primary {
+    background-color: var(--brown);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(111, 78, 55, 0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: var(--accent);
+    box-shadow: 0 7px 15px rgba(155, 89, 182, 0.8);
+    outline: none;
+  }
+
+  /* 3D Canvas Container */
+  #canvas-container {
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+    box-shadow: 0 0 50px var(--accent);
+    background: linear-gradient(45deg, var(--grey-dark), var(--black));
+  }
+
+  /* Services Section */
+  #services {
+    background: var(--black);
+    padding: 5rem 3rem 5rem 3rem;
+    text-align: center;
+  }
+  #services h2 {
+    font-size: 2.8rem;
+    color: var(--brown);
+    margin-bottom: 3rem;
+    letter-spacing: 1.4px;
+  }
+  .services-list {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .service-card {
+    background: var(--grey-dark);
+    border-radius: 18px;
+    padding: 2rem 2.5rem;
+    flex: 1 1 250px;
+    max-width: 280px;
+    box-shadow: 0 0 20px rgba(111, 78, 55, 0.6);
+    color: var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .service-card:hover,
+  .service-card:focus {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px var(--accent);
+    outline: none;
+  }
+  .service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.3rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  .service-card:hover .service-icon,
+  .service-card:focus .service-icon {
+    color: var(--accent);
+  }
+  .service-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+  }
+  .service-desc {
+    font-size: 1rem;
+    color: var(--grey-dark);
+  }
+.flip-card {
+  background: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: #f5f5f5;
+  padding: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.flip-back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+}
+.flip-back iframe {
+  width: 100%;
+  height: calc(100% - 2rem);
+  border: none;
+  border-radius: 8px;
+}
+.close-btn {
+  background: transparent;
+  color: #a66bbe;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+
+  /* Testimonials Section */
+  #testimonials {
+    background: var(--black);
+    padding: 5rem 3rem 5rem 3rem;
+    text-align: center;
+    color: var(--grey-light);
+  }
+  #testimonials h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: var(--brown);
+  }
+  .testimonial-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .testimonial {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem 2.5rem;
+    background: var(--grey-dark);
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(111, 78, 55, 0.8);
+    transition: opacity 1s ease;
+    color: var(--white);
+  }
+  .testimonial.active {
+    opacity: 1;
+    position: relative;
+  }
+  .testimonial p {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-author {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+
+  /* YouTube Vedic Links */
+  section.youtube-links {
+    background: var(--grey-dark);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--white);
+  }
+  section.youtube-links h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
+    color: var(--brown);
+  }
+  .youtube-list {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .youtube-item {
+    background: var(--black);
+    padding: 1rem 1.4rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px var(--brown);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .youtube-item:hover, .youtube-item:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px var(--accent);
+    outline: none;
+  }
+  .youtube-item svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent);
+  }
+
+  /* Contact Info Section */
+  #contact {
+    background: var(--black);
+    padding: 4rem 2rem 6rem 2rem;
+    color: var(--grey-light);
+    text-align: center;
+  }
+  #contact h2 {
+    font-size: 2.8rem;
+    color: var(--brown);
+    margin-bottom: 2rem;
+  }
+  .contact-info {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 3rem auto;
+  }
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  #contact p.note {
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.1rem;
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--grey-dark);
+    color: var(--grey-light);
+    text-align: center;
+    padding: 1.5rem 1rem 2rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .social-icons {
+    margin-bottom: 1rem;
+  }
+  .social-icons a {
+    color: var(--grey-light);
+    margin: 0 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .social-icons a:hover,
+  .social-icons a:focus {
+    color: var(--accent);
+    transform: scale(1.3);
+    outline: none;
+  }
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    fill: currentColor;
+  }
+  /* CSS */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  opacity: 1;
+  cursor: pointer;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 4rem 2rem 4rem 2rem;
+    }
+    #canvas-container {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      border-radius: 24px;
+    }
+    nav a {
+      margin-left: 1.2rem;
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .services-list {
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <h1 tabindex="0" aria-label="Iconic Byte Agency">Iconic Byte</h1>
+  <nav role="navigation" aria-label="Main Navigation">
+    <a href="#services" tabindex="0">Services</a>
+    <a href="#portfolio" tabindex="0">Portfolio</a>
+    <a href="#testimonials" tabindex="0">Testimonials</a>
+    <a href="#contact" tabindex="0">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" aria-label="Iconic Byte Hero Section">
+    <div class="hero-text">
+      <h2 tabindex="0">Crafting 3D Animated Marketing & Websites</h2>
+      <p tabindex="0">We bring your brand to life with cutting-edge 3D animations, motion graphics, and innovative websites — all designed to leave a lasting impression.</p>
+      <button class="btn-primary" aria-label="Contact Iconic Byte">Contact Us</button>
+    </div>
+
+
+
+  <div id="canvas-container" aria-label="3D rotating geometric box animation">
+    <style>
+#canvas-container {
+  width: 35%;
+  height: 45vh; /* Full screen height */
+  background-image: url('https://i.postimg.cc/3JZV9zCS/temp-Image7-Kfk6-L.avif'); /* Replace with your image link */
+  background-size: cover;   
+      /* Make sure it covers the container */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ </STYLE> 
+
+    <div class="hero-3d" aria-label="3D animated character placeholder">
+      <div class="cube" aria-hidden="true">
+        <div class="face face1">3D</div>
+        <div class="face face2">ICONIC</div>
+        <div class="face face3">BYTE</div>
+        <div class="face face4"></div>
+        <div class="face face5"></div>
+        <div class="face face6"></div>
+        
+      </div>
+    </div>
+  </section>
+
+
+
+</div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-label="Our Services at Iconic Byte">
+    <h2 tabindex="0">What We Do</h2>
+    <div class="services-list">
+      <article class="service-card" tabindex="0" aria-describedby="desc-marketing">
+        <div class="service-icon" aria-hidden="true">🎥</div>
+            <style>.service-card { background-image: url('https://i.postimg.cc/x8gR9j2s/temp-Image-KB0-U4c.avif');} </style>
+        <h3 class="service-title">3D Animated Marketing</h3>
+        <p class="service-desc" id="desc-marketing">Dynamic, eye-catching 3D videos and animations to engage your audience like never before.</p>
+      </article>
+
+      <article class="service-card" tabindex="0" aria-describedby="desc-websites">
+        <div class="service-icon" aria-hidden="true">🌐</div>
+        <h3 class="service-title">3D Websites</h3>
+        <p class="service-desc" id="desc-websites">Immersive, interactive websites with stunning 3D graphics and smooth animations.</p>
+      </article>
+
+      <article class="service-card" tabindex="0" aria-describedby="desc-motion">
+        <div class="service-icon" aria-hidden="true">✨</div>
+        <h3 class="service-title">Motion Graphics</h3>
+        <p class="service-desc" id="desc-motion">Creative motion design that communicates your message with flair and style.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="vedic-videos" aria-label="Vedic Video Series" style="background:#0a0a0a; padding:4rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#a66bbe; margin-bottom:2.5rem;">Iconic Byte Presents 3D</h2>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;">
+
+    <!-- 1. Intro to Vedic Concepts -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front"> Car Tragedy ▶</div>
+        <div class="flip-back">
+          <button class="close-btn">✕</button>
+          <iframe src="https://drive.google.com/file/d/1ZN4Ee1PqSJh2iazm7dQX5bIvaRiEoj0a/preview" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Meditation Techniques -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Airline Advertisement ▶</div>
+        <div class="flip-back">
+          <button class="close-btn">✕</button>
+          <iframe src="https://drive.google.com/file/d/1Hk5ApHfoxFj1XdJm4CIJj7TR5aFFqhoS/preview" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Vedic Astrology Basics -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Nicotine Commercial ▶</div>
+        <div class="flip-back">
+          <button class="close-btn">✕</button>
+          <iframe src="https://drive.google.com/file/d/1QgshPMI35zFv9APsmu81lFLmHVGpmEU7/preview" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Mantras & Vibrations -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Survival Story ▶</div>
+        <div class="flip-back">
+          <button class="close-btn">✕</button>
+          <iframe src="https://drive.google.com/file/d/1w-xStmxPv3_kb_U8AffH7O6ZV7e-WSP5/preview" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Ayurveda Explained -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Road Accidents ▶</div>
+        <div class="flip-back">
+          <button class="close-btn">✕</button>
+          <iframe src="https://drive.google.com/file/d/1ZYOWI_IxG5XDGSKgQpLTurwscXYuWl8g/preview" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Vedic Mathematics -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">Safety Tricks▶</div>
+        <div class="flip-back">
+          <button class="close-btn">✕</button>
+          <iframe src="https://drive.google.com/file/d/1lD8VBZuPS7qTa464eySCMkf2zkWDI1vm/preview" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Testimonials -->
+  <section id="testimonials" aria-label="Testimonials from Clients">
+    <h2 tabindex="0">What Clients Say</h2>
+    <div class="testimonial-slider" role="list" aria-live="polite" aria-atomic="true">
+      <div class="testimonial active" role="listitem" tabindex="0">
+        <p>"Iconic Byte transformed our marketing with 3D videos that truly captivate."</p>
+        <div class="testimonial-author">— Maya R.</div>
+      </div>
+      <div class="testimonial" role="listitem" tabindex="0">
+        <p>"Their 3D websites are unlike anything we've seen, immersive and interactive."</p>
+        <div class="testimonial-author">— James L.</div>
+      </div>
+      <div class="testimonial" role="listitem" tabindex="0">
+        <p>"Professional, creative, and always delivering beyond expectations."</p>
+        <div class="testimonial-author">— Sara K.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Vedic Links -->
+  <section class="youtube-links" aria-label="Iconic YouTube Channels">
+    <h2 tabindex="0">Iconic Live youtube vedios </h2>
+    <div class="youtube-list">
+      <a href="https://www.youtube.com/watch?v=vKSaF8NvMiQ" class="youtube-item" target="_blank" rel="noopener" aria-label="Vedic Culture YouTube Channel" tabindex="0">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 15l5-3-5-3v6zM21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>Vedic Culture
+      </a>
+      <a href="https://www.youtube.com/@iconicbytes" class="youtube-item" target="_blank" rel="noopener" aria-label="Iconic Byte YouTube Channel" tabindex="0">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 15l5-3-5-3v6zM21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>Vedic Science
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-label="Contact Iconic Byte Agency">
+    <h2 tabindex="0">Get In Touch</h2>
+    <p class="contact-info" tabindex="0">
+      <strong>Email:</strong> <a href="mailto:byteiconic@gmail.com">byteiconic@gmail.com</a><br />
+      <strong>whatsapp:</strong> <a href="whatsapp:+19452904946">+1 (945) 290-4946</a><br />
+      <strong>Address:</strong> 9750 140 st, Surrey BC V3T 0G9, Canada 
+    </p>
+    <p class="note" tabindex="0">
+      We're here to bring your vision to life with iconic designs and animation.
+    </p>
+  </section>
+</main>
+
+<footer role="contentinfo" aria-label="Footer with Social Media Links">
+  <div class="social-icons">
+    <a href="https://www.instagram.com/iconicbyte?igsh=MmFqcGsyY2h3aG9o&utm_source=ig_contact_invite" target="_blank" rel="noopener" aria-label="instagram" tabindex="0">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.4.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.4-.2.6-.5 1-0.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.4-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.4.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.9.4-1.6.9-2.3 1.6-.7.7-1.2 1.4-1.6 2.3C0 5.8.1 6.7.1 8 0 9.3 0 9.7 0 12c0 2.3 0 2.7.1 4 .1 1.3.3 2.2.6 2.9.4.9.9 1.6 1.6 2.3.7.7 1.4 1.2 2.3 1.6.7.3 1.6.5 2.9.6 1.3.1 1.7.1 4 .1s2.7 0 4-.1c1.3-.1 2.2-.3 2.9-.6.9-.4 1.6-.9 2.3-1.6.7-.7 1.2-1.4 1.6-2.3.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-4s0-2.7-.1-4c-.1-1.3-.3-2.2-.6-2.9-.4-.9-.9-1.6-1.6-2.3-.7-.7-1.4-1.2-2.3-1.6C18.2.3 17.3.1 16 .1 14.7 0 14.3 0 12 0zM12 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-11.6a1.4 1.4 0 100 2.8 1.4 1.4 0 000-2.8z"/>
+  </svg>
+    </a>
+    <a href="https://www.linkedin.com/company/iconic-bytes-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn" tabindex="0">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zm.02 7.5h4.92v10h-4.92v-10zm7.68 0h4.7v1.4h.07a5.16 5.16 0 014.64-2.56c4.96 0 5.88 3.27 5.88 7.53v8.63h-4.92v-7.63c0-1.83-.03-4.18-2.55-4.18-2.55 0-2.94 2-2.94 4.05v7.75h-4.92v-10z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/share/1CAx5igP5X/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" tabindex="0">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 12a10 10 0 10-11.5 9.87v-6.99h-2.5V12h2.5v-2.25c0-2.47 1.48-3.83 3.75-3.83 1.08 0 2.22.19 2.22.19v2.44h-1.25c-1.23 0-1.61.77-1.61 1.56V12h2.75l-.44 2.88h-2.31v6.99A10 10 0 0022 12z"/></svg>
+    </a>
+   
+  </div>
+       <p> &copy; 2025 Iconic Byte Agency </p>   
+
+           <img src="https://i.postimg.cc/rs4kghZg/temp-Imagedpblvd.avif" alt="Company Logo" class="footer-logo" />
+           <img src="https://i.postimg.cc/RZ4BQL7Q/temp-Imagei-TMNvu.avif" alt="Company Logo" class="footer-logo" />
+           <img src="https://i.postimg.cc/TP8xBcxs/temp-Image-N08d-H1.avif" alt="Company Logo" class="footer-logo" />
+           <img src="https://i.postimg.cc/LXzDTLBL/temp-Image1b-Aoz-M.avif" alt="Company Logo" class="footer-logo" />
+           <img src="https://i.postimg.cc/JzNhRhqK/temp-Imagev-WGRFd.avif" alt="Company Logo" class="footer-logo" />
+</footer>
+
+<!-- Three.js and 3D Box Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+<script>
+  const container = document.getElementById('canvas-container');
+
+  // Scene setup
+  const scene = new THREE.Scene();
+
+  // Camera setup
+  const camera = new THREE.PerspectiveCamera(
+    45,
+    container.clientWidth / container.clientHeight,
+    0.1,
+    1000
+  );
+  camera.position.z = 6;
+
+  // Renderer
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  // Lights
+  const ambientLight = new THREE.AmbientLight(0x654321, 0.7); // brown-ish ambient
+  scene.add(ambientLight);
+
+  const pointLight = new THREE.PointLight(0x9b59b6, 1); // purple accent light
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+
+  // Geometric Box (cube) with animated faces
+  // Materials for each face with subtle color and glowing effect
+  const materials = [
+    new THREE.MeshStandardMaterial({ color: 0x6f4e37, emissive: 0x3b1a4d, emissiveIntensity: 0.3 }), // Brown face
+    new THREE.MeshStandardMaterial({ color: 0x444444, emissive: 0x3b1a4d, emissiveIntensity: 0.25 }), // Grey face
+    new THREE.MeshStandardMaterial({ color: 0x3b1a4d, emissive: 0x6f4e37, emissiveIntensity: 0.35 }), // Dark purple face
+    new THREE.MeshStandardMaterial({ color: 0x6f4e37, emissive: 0x444444, emissiveIntensity: 0.2 }), // Brown/Grey face
+    new THREE.MeshStandardMaterial({ color: 0x222222, emissive: 0x9b59b6, emissiveIntensity: 0.5 }), // Darker face with purple glow
+    new THREE.MeshStandardMaterial({ color: 0x3b1a4d, emissive: 0x6f4e37, emissiveIntensity: 0.3 }), // Purple/Brown face
+  ];
+
+  const geometry = new THREE.BoxGeometry(2.7, 2.7, 2.7);
+  const cube = new THREE.Mesh(geometry, materials);
+  scene.add(cube);
+
+  // Animation clock for emissive intensity pulsation
+  const clock = new THREE.Clock();
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    const elapsed = clock.getElapsedTime();
+
+    // Rotate the cube slowly
+    cube.rotation.x += 0.005;
+    cube.rotation.y += 0.007;
+
+    // Animate emissive intensity pulsating per face
+    materials.forEach((mat, i) => {
+      mat.emissiveIntensity = 0.25 + 0.15 * Math.sin(elapsed * 2 + i);
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Responsive canvas
+  window.addEventListener('resize', () => {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  });
+
+  // Testimonials slider auto-cycle
+  const testimonials = document.querySelectorAll('.testimonial');
+  let currentTestimonial = 0;
+  function cycleTestimonials() {
+    testimonials.forEach((t, i) => {
+      t.classList.toggle('active', i === currentTestimonial);
+    });
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  }
+  setInterval(cycleTestimonials, 6000);
+
+</script>
+</body>
+</html>
